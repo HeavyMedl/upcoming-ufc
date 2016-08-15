@@ -5,104 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Upcoming UFC</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-        <style>
-        	* {
-				box-sizing: border-box;
-				transition: all 3s ease;
-        	}
-			body, html {
-				height: 100%;
-			}
-			body {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 0;
-				margin: 0;
-				background-color: #efefef;
-				line-height: 24px;
-				font-size: 16px;
-				font-family: 'Roboto', sans-serif;
-				color: #333;
-			}
-			section {
-				width: 25rem;
-			}
-			.loader {
-				font-size: 20px;
-				width: 1em;
-				height: 1em;
-				border-radius: 50%;
-				position: relative;
-				text-indent: -9999em;
-				-webkit-animation: load4 1.3s infinite linear;
-				animation: load4 1.3s infinite linear;
-				-webkit-transform: translateZ(0);
-				-ms-transform: translateZ(0);
-				transform: translateZ(0);
-			}
-			@-webkit-keyframes load4 {
-			  0%,
-			  100% {
-			    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-			  }
-			  12.5% {
-			    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-			  }
-			  25% {
-			    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-			  }
-			  37.5% {
-			    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-			  }
-			  50% {
-			    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-			  }
-			  62.5% {
-			    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-			  }
-			  75% {
-			    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-			  }
-			  87.5% {
-			    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-			  }
-			}
-			@keyframes load4 {
-			  0%,
-			  100% {
-			    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-			  }
-			  12.5% {
-			    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-			  }
-			  25% {
-			    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-			  }
-			  37.5% {
-			    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-			  }
-			  50% {
-			    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-			  }
-			  62.5% {
-			    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-			  }
-			  75% {
-			    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-			  }
-			  87.5% {
-			    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-			  }
-			}
-
-        </style>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-    	<div class="loader">Loading...</div>
-    	<section>
-    		Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-    	</section>
+    	<div class="loader hide"></div>
+    	<div class="row center-xs">
+    		<div class="card-container col-xs-12 col-sm-6">
+    			<div class="card">
+    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+    			</div>
+    		</div>
+    		<div class="card-container col-xs-12 col-sm-6">
+    			<div class="card">
+    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+    			</div>
+    		</div>
+    		<div class="card-container col-xs-12 col-sm-6">
+    			<div class="card">
+    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+    			</div>
+    		</div>
+    		<div class="card-container col-xs-12 col-sm-6">
+    			<div class="card">
+    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+    			</div>
+    		</div>
+    	</div>
         <script src="jspm_packages/system.src.js"></script>
         <script src="config.js"></script>
         <script>
