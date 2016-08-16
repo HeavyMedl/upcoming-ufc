@@ -9,33 +9,23 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-    	<div class="loader hide"></div>
-    	<div class="row center-xs">
-    		<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-    			</div>
-    		</div>
-    		<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-    			</div>
-    		</div>
-    		<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-    			</div>
-    		</div>
-    		<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-    			</div>
+    	<div class="loader"></div>
+    	<div id="events-container" class="row center-xs hide">
+    		<div class="col-xs-12">
+    			<h1>UFC EVENTS</h1>
     		</div>
     	</div>
         <script src="jspm_packages/system.src.js"></script>
         <script src="config.js"></script>
         <script>
         	System.import('lib/main.js');
+        </script>
+        <script id="tmpl_event" type="html/template">
+        	<div class="card-container col-xs-12 col-sm-6">
+    			<div class="card">
+    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+    			</div>
+    		</div>
         </script>
     </body>
 </html>
