@@ -7,11 +7,11 @@ body, html {
 }
 body {
 	margin: 0;
-	background-color: #efefef;
+	background-color: #2A2C39;
 	line-height: 24px;
 	font-size: 16px;
 	font: 300 18px/24px 'open sans';
-	color: #333;
+	color: #fff;
 }
 section {
 	width: 25rem;
@@ -38,12 +38,12 @@ section {
 	margin-left: 25px;
 	margin-right: 25px;
 	padding: 25px 0;
-	border-bottom: 1px dashed #333;
+	border-bottom: 1px dashed #fff;
 }
 .header {
-	color: #E9E9EB;
-	background-color: #2A2C39;
-	font: 400 87px/84px 'Abril Fatface';
+	color: black;
+	background-color: #efefef;
+	font: 300 50px/47px 'Abril Fatface';
 	padding: 20px 0;
 }
 @-webkit-keyframes load4 {
