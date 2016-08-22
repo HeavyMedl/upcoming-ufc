@@ -13,8 +13,9 @@ body {
 	font: 300 18px/24px 'open sans';
 	color: #D1D6E7;
 }
-section {
-	width: 25rem;
+#events-container {
+	max-width: 1400px;
+	margin: auto;
 }
 .hide {
 	opacity: 0;
