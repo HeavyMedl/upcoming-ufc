@@ -4,29 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Upcoming UFC</title>
-        <link href="http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-    	<div class="loader hide"></div>
+    	<div id="loader"></div>
     	<div class="row center-xs header">
 			<div class="col-xs-12">
 				<span>UFC Events</span>
 			</div>
 		</div>
-    	<div id="events-container" class="row center-xs">
-    		<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				This is a test
-    			</div>
-    		</div>
-    		<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				This is a test
-    			</div>
-    		</div>
-    	</div>
+    	<div id="events-container" class="row center-xs hide"></div>
         <script src="jspm_packages/system.src.js"></script>
         <script src="config.js"></script>
         <script>
@@ -35,7 +24,24 @@
         <script id="tmpl_event" type="html/template">
         	<div class="card-container col-xs-12 col-sm-6">
     			<div class="card">
-    				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+    				<div class="feature-img-container" data-src='<%=img_src%>'>
+    				</div>
+    				<div>
+    					<span class="red"><%=base_title%></span>
+    					<strong><%=title_tag_line%></strong>
+    				</div>
+    				<div>
+    					<span class="status"><%=status%></span>
+    					<span><%=subtitle%></span>
+    				</div>
+    				<div><%=date%></div>
+    				<div>
+    					<span><%=time%></span>
+    				</div>
+    				<div>
+    					<%=arena%>
+    					<%=location%>
+    				</div>
     			</div>
     		</div>
         </script>
