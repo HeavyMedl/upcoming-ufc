@@ -6,7 +6,7 @@
         <title>Upcoming UFC</title>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
-        <link href="css/style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
     	<div id="loader"></div>
@@ -42,10 +42,22 @@
     					<%=arena%>
     					<%=location%>
     				</div>
-    				<div>
+    				<div class="panels-container">
+    					<%=panels%>
 					</div>
     			</div>
     		</div>
+        </script>
+        <script id="tmpl_fight" type="html/template">
+        	<div class="panel closed">
+				<div class="panel-heading" data-panel="0">
+					<span><%=fighter_1%></span>
+					<span class="red">v.</span>
+					<span><%=fighter_2%></span>
+				</div>
+				<div class="panel-body" data-panel="0">
+				</div>
+			</div>
         </script>
     </body>
 </html>
