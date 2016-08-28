@@ -47,13 +47,13 @@
     		</div>
         </script>
         <script id="tmpl_fight" type="html/template">
-        	<div class="panel closed">
-				<div class="panel-heading" data-panel="0">
+        	<div class="panel closed" data-panel="<%=panel_index%>" data-event="<%=event_id%>" data-fight="<%=fight_id%>">
+				<div class="panel-heading" data-panel="<%=panel_index%>">
 					<span><%=fighter_1%></span>
 					<span class="red">v.</span>
 					<span><%=fighter_2%></span>
 				</div>
-				<div class="panel-body" data-panel="0">
+				<div class="panel-body" data-panel="<%=panel_index%>">
 				</div>
 			</div>
         </script>
