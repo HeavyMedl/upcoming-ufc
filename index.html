@@ -40,20 +40,20 @@
     					<%=arena%>
     					<%=location%>
     				</div>
-    				<div class="panels-container">
-    					<%=panels%>
+    				<div class="accordions-container">
+    					<%=accordions%>
 					</div>
     			</div>
     		</div>
         </script>
         <script id="tmpl_fight" type="html/template">
-        	<div class="panel closed" data-panel="<%=panel_index%>" data-event="<%=event_id%>" data-fight="<%=fight_id%>">
-				<div class="panel-heading" data-panel="<%=panel_index%>">
+        	<div class="accordion closed" data-accordion="<%=accordion_index%>" data-event="<%=event_id%>" data-fight="<%=fight_id%>">
+				<div class="accordion-heading" data-accordion="<%=accordion_index%>">
 					<span><%=fighter_1%></span>
 					<span class="red">v.</span>
 					<span><%=fighter_2%></span>
 				</div>
-				<div class="panel-body" data-panel="<%=panel_index%>">
+				<div class="accordion-body" data-accordion="<%=accordion_index%>">
                     <%=fight_details%>
 				</div>
 			</div>
