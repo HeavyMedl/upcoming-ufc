@@ -1,137 +1,157 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Upcoming UFC</title>
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-    	<div id="loader"></div>
-    	<div class="center-xs header">
-            <span>UFC Events</span>
-		</div>
-    	<div id="events-container" class="row center-xs hide"></div>
-        <!-- <script src="jspm_packages/system.js"></script> -->
-        <!-- <script src="config.js"></script> -->
-        <!-- <script> -->
-        	<!-- System.import('lib/main.js'); -->
-        <!-- </script> -->
-        <script src="app.js" async defer></script>
-        <script id="tmpl_event" type="html/template">
-        	<div class="card-container col-xs-12 col-sm-6">
-    			<div class="card">
-    				<div class="feature-img-container" data-src='<%=img_src%>'>
-    				</div>
-    				<div>
-    					<span class="red"><%=base_title%></span>
-    					<strong><%=title_tag_line%></strong>
-    				</div>
-    				<div>
-    					<span class="status"><%=status%></span>
-    					<span><%=subtitle%></span>
-    				</div>
-    				<div><%=date%></div>
-    				<div>
-    					<span><%=time%></span>
-    				</div>
-    				<div>
-    					<%=arena%>
-    					<%=location%>
-    				</div>
-    				<div class="accordions-container">
-    					<%=accordions%>
-					</div>
-    			</div>
-    		</div>
-        </script>
-        <script id="tmpl_fight" type="html/template">
-        	<div class="accordion closed" data-accordion="<%=accordion_index%>" data-event="<%=event_id%>" data-fight="<%=fight_id%>">
-				<div class="accordion-heading" data-accordion="<%=accordion_index%>">
-					<span><%=fighter_1%></span>
-					<span class="red">v.</span>
-					<span><%=fighter_2%></span>
-				</div>
-				<div class="accordion-body" data-accordion="<%=accordion_index%>">
-                    <%=fight_details%>
-				</div>
-			</div>
-        </script>
-        <script id="tmpl_fight_details" type="html/template">
-            <ul class="fighter-imgs">
-                <li>
-                    <img src="<%=f1_profile%>" alt="..." class="img-responsive"/>
-                </li>
-                <li>
-                    <img src="<%=f2_profile%>" alt="..." class="img-responsive"/>
-                </li>
-            </ul>
-            <table class="center-xs">
-                <tbody>
-                    <tr>
-                        <td><%=record_1%></td>
-                        <td>Record</td>
-                        <td><%=record_2%></td>
-                    </tr>
-                    <tr>
-                        <td><%=height_1%> in</td>
-                        <td>HEIGHT</td>
-                        <td><%=height_2%> in</td>
-                    </tr>
-                    <tr>
-                        <td><%=weight_1%> lbs</td>
-                        <td>WEIGHT</td>
-                        <td><%=weight_2%> lbs</td>
-                    </tr>
-                    <tr>
-                        <td><%=reach_1%> in</td>
-                        <td>REACH</td>
-                        <td><%=reach_2%> in</td>
-                    </tr>
-                    <tr>
-                        <td><%=slpm_1%></td>
-                        <td>LANDED PER MINUTE</td>
-                        <td><%=slpm_2%></td>
-                    </tr>
-                    <tr>
-                        <td><%=striking_accuracy_1%>%</td>
-                        <td>ACCURACY</td>
-                        <td><%=striking_accuracy_2%>%</td>
-                    </tr>
-                    <tr>
-                        <td><%=sapm_1%></td>
-                        <td>ABSORBED P/M</td>
-                        <td><%=sapm_2%></td>
-                    </tr>
-                    <tr>
-                        <td><%=defense_1%>%</td>
-                        <td>DEFENSE</td>
-                        <td><%=defense_2%>%</td>
-                    </tr>
-                    <tr>
-                        <td><%=takedownaverage_1%></td>
-                        <td>TAKEDOWN AVERAGE</td>
-                        <td><%=takedownaverage_2%></td>
-                    </tr>
-                    <tr>
-                        <td><%=takedownaccuracy_1%>%</td>
-                        <td>TAKEDOWN ACCURACY</td>
-                        <td><%=takedownaccuracy_2%>%</td>
-                    </tr>
-                    <tr>
-                        <td><%=takedowndefense_1%>%</td>
-                        <td>TAKEDOWNS DEFENDED</td>
-                        <td><%=takedowndefense_2%>%</td>
-                    </tr>
-                    <tr>
-                        <td><%=submissionsaverage_1%></td>
-                        <td>SUBMISSION AVERAGE</td>
-                        <td><%=submissionsaverage_2%></td>
-                    </tr>
-                </tbody>
-            </table>
-        </script>
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upcoming UFC</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="loader"></div>
+  <div class="center-xs header"> <span>UFC Events</span> </div>
+  <div id="events-container" class="row center-xs hide"></div>
+  <!-- <script src="jspm_packages/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    System.import('lib/main.js');
+  </script> -->
+  <script src="app.js" async defer></script>
+  <script id="tmpl_event" type="html/template">
+    <div class="card-container col-xs-12 col-sm-6">
+      <div class="card">
+        <div class="feature-img-container" data-src='<%=img_src%>'> </div>
+        <div> <span class="red"><%=base_title%></span> <strong><%=title_tag_line%></strong> </div>
+        <div> <span class="status"><%=status%></span> <span><%=subtitle%></span> </div>
+        <div>
+          <%=date%>
+        </div>
+        <div> <span><%=time%></span> </div>
+        <div>
+          <%=arena%>
+            <%=location%>
+        </div>
+        <div class="accordions-container">
+          <%=accordions%>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="tmpl_fight" type="html/template">
+    <div class="accordion closed" data-accordion="<%=accordion_index%>" data-event="<%=event_id%>" data-fight="<%=fight_id%>">
+      <div class="accordion-heading" data-accordion="<%=accordion_index%>"> <span><%=fighter_1%></span> <span class="red">v.</span> <span><%=fighter_2%></span> </div>
+      <div class="accordion-body" data-accordion="<%=accordion_index%>">
+        <%=fight_details%>
+      </div>
+    </div>
+  </script>
+  <script id="tmpl_fight_details" type="html/template">
+    <ul class="fighter-imgs">
+      <li> <img src="<%=f1_profile%>" alt="..." class="img-responsive" /> </li>
+      <li> <img src="<%=f2_profile%>" alt="..." class="img-responsive" /> </li>
+    </ul>
+    <table class="center-xs">
+      <tbody>
+        <tr>
+          <td>
+            <%=record_1%>
+          </td>
+          <td>Record</td>
+          <td>
+            <%=record_2%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%=height_1%> in</td>
+          <td>HEIGHT</td>
+          <td>
+            <%=height_2%> in</td>
+        </tr>
+        <tr>
+          <td>
+            <%=weight_1%> lbs</td>
+          <td>WEIGHT</td>
+          <td>
+            <%=weight_2%> lbs</td>
+        </tr>
+        <tr>
+          <td>
+            <%=reach_1%> in</td>
+          <td>REACH</td>
+          <td>
+            <%=reach_2%> in</td>
+        </tr>
+        <tr>
+          <td>
+            <%=slpm_1%>
+          </td>
+          <td>LANDED PER MINUTE</td>
+          <td>
+            <%=slpm_2%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%=striking_accuracy_1%>%</td>
+          <td>ACCURACY</td>
+          <td>
+            <%=striking_accuracy_2%>%</td>
+        </tr>
+        <tr>
+          <td>
+            <%=sapm_1%>
+          </td>
+          <td>ABSORBED P/M</td>
+          <td>
+            <%=sapm_2%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%=defense_1%>%</td>
+          <td>DEFENSE</td>
+          <td>
+            <%=defense_2%>%</td>
+        </tr>
+        <tr>
+          <td>
+            <%=takedownaverage_1%>
+          </td>
+          <td>TAKEDOWN AVERAGE</td>
+          <td>
+            <%=takedownaverage_2%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%=takedownaccuracy_1%>%</td>
+          <td>TAKEDOWN ACCURACY</td>
+          <td>
+            <%=takedownaccuracy_2%>%</td>
+        </tr>
+        <tr>
+          <td>
+            <%=takedowndefense_1%>%</td>
+          <td>TAKEDOWNS DEFENDED</td>
+          <td>
+            <%=takedowndefense_2%>%</td>
+        </tr>
+        <tr>
+          <td>
+            <%=submissionsaverage_1%>
+          </td>
+          <td>SUBMISSION AVERAGE</td>
+          <td>
+            <%=submissionsaverage_2%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </script>
+</body>
+
 </html>
